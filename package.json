@@ -1,0 +1,50 @@
+{
+  "name": "GeesiAI",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.12.0",
+    "@uiw/react-markdown-preview": "^5.1.1",
+    "axios": "^1.7.2",
+    "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "firebase": "^10.12.1",
+    "fs": "^0.0.1-security",
+    "gtts": "^0.2.1",
+    "joi": "^17.13.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.0",
+    "next": "14.2.2",
+    "next-auth": "^5.0.0-beta.19",
+    "nodemailer": "^6.9.13",
+    "react": "^18",
+    "react-csv": "^2.2.2",
+    "react-dom": "^18",
+    "react-icons": "^5.2.1",
+    "react-markdown": "^9.0.1",
+    "react-modal-video": "^2.0.2",
+    "react-pdftotext": "^1.3.0",
+    "reactstrap": "^9.2.2",
+    "say": "^0.16.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.12",
+    "@types/react": "18.3.2",
+    "daisyui": "^4.11.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
