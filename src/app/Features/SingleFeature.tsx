@@ -1,6 +1,6 @@
-import { Feature } from "@/types/feature";
+// import { Feature } from "@/types/feature";
 
-const SingleFeature = ({ feature }: { feature: Feature }) => {
+const SingleFeature = ({ feature }) => {
   const { icon, title, paragraph } = feature;
   return (
     <div className="w-full">
