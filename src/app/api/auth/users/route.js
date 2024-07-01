@@ -63,7 +63,16 @@ export const GET = async () => {
 export const POST = async (request) => {
     try {
         const body = await request.json()
-        let { email, fullName } = body
+        let { email, fullName, secretSignupKey } = body
+
+        const old_SecretSignupKey = "@@$$^jfs%@@09sjs!9873sd8422@@&5431fk@$%&*"
+
+
+        // if (secretSignupKey !== old_SecretSignupKey) {
+        //     return new NextResponse(JSON.stringify({ response: "Access Denied" }), { status: 300 })
+
+        // }
+
 
         await connect()
 
@@ -81,7 +90,7 @@ export const POST = async (request) => {
             const token = jwt.sign({ email, fullName, power }, process.env.MY_SECRET, { expiresIn: "1d" })
             const authtoken = jwt.sign({ email, fullName, power }, process.env.MY_SECRET, { expiresIn: "365d" })
 
-            let data = { ...body, power, authtoken, token }
+            let data = { email, fullName, power, authtoken, token }
             // let data2 = { ...data, authtoken }
             const newUser = new User(data)
             await newUser.save()
@@ -113,6 +122,11 @@ export const POST = async (request) => {
                 return new NextResponse(JSON.stringify({ response: 'UN-AUTHORIZED ACCESS' }, { status: 300 }))
             }
         }
+
+
+
+
+
 
 
     } catch (error) {
