@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { FaCheck, FaDownload, FaEye } from "react-icons/fa";
-import {CSVReader } from 'react-csv'
 import { UserAuth } from "../../context/AuthContext";
 import axios from "axios";
 // import { useTheme } from "next-themes";
