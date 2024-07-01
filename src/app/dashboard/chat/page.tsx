@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 import ValidationOutput from "./ValidationOutput";
 import { FaFileCsv } from "react-icons/fa";
 import { useState, useRef } from "react";
-import * as XLSX from 'xlsx'
 
 
 import axios from "axios";
