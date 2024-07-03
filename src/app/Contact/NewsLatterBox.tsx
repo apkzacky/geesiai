@@ -25,7 +25,7 @@ const NewsLatterBox = () => {
                            setResponseMessage(response.data.response)
                         })
                         .catch((error) => {
-                            setResponseMessage(`${error.message}`)
+                            setResponseMessage(`Unable to subscribe`)
 
                         } )
                         .finally(() => {
