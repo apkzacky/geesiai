@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
-
+import welcomeimage from '../../../public/welcome-image-header.png'
 const Video = () => {
   const [isOpen, setOpen] = useState(false);
 
@@ -20,7 +20,7 @@ const Video = () => {
             >
               <div className="mt-0 pt-0 relative aspect-[77/40] items-center justify-center">
               {/* <video src="/demo.mp4"  /> */}
-                <Image src="/welcome-image.png" alt="video image" width={1000} height={1000} />
+                <Image src={welcomeimage} alt="video image" width={1000} height={1000} />
                 <div className="absolute right-0 top-0 flex h-full w-full items-center justify-center">
                   <button
                     aria-label="video play button"
