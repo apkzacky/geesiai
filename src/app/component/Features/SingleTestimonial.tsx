@@ -37,7 +37,7 @@ const SingleTestimonial = ({ testimonial }) => {
          </>
         ): id == 3 ? (
           <>
-          <OfferList text="Summarize up-to 4096 charecters" status="active" />
+          <OfferList text="Summarize the whole chapter" status="active" />
             <OfferList text="Support PDF Upload" status="active" />
           </>
         ): id == 2 ? (
@@ -45,7 +45,6 @@ const SingleTestimonial = ({ testimonial }) => {
             <OfferList text="Support PDF Upload" status="active" />
             <OfferList text="Support True/False" status="active" />
             <OfferList text="Support Multiple Choose" status="active" />
-            <OfferList text="Support Fill The Blank Space" status="active" />
             <OfferList text="Support 1-20 Questions per exam" status="active" />
 
           </>
