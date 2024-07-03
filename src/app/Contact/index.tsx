@@ -33,7 +33,7 @@ const handleChange = (e) => {
     
                         })
                         .catch((error) => {
-                            setResponseMessage(`${error.message}`)
+                            setResponseMessage(`Unable to send feadback`)
                         } )
                         .finally(() => {
                           setTimeout(() => {
