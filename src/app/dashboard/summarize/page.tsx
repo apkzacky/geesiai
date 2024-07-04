@@ -1,8 +1,6 @@
 'use client'
-import { useRouter } from "next/navigation";
 import pdfToText from 'react-pdftotext'
 import { useState, useRef } from "react";
-
 import Markdown from 'react-markdown'
 
 
@@ -10,20 +8,17 @@ import Markdown from 'react-markdown'
 import axios from "axios";
 import { UserAuth } from "../../context/AuthContext";
 import AuthComponent from "../../auth/page";
-import Image from "next/image";
-import { FaFilePdf, FaRegFilePdf } from "react-icons/fa";
+import { FaRegFilePdf } from "react-icons/fa";
 
 const Simulation = () => {
   // about gemini
   const {user,tokenLoading}:any = UserAuth()
     const [message, setMessage] = useState(null)
 const [loading, setLoading] = useState(false)
-const [uploadingpdf, seUploadingPDF] = useState(false)
 const [sumarizing, setsumarizing] = useState(false)
 const [response_pdf, setResponse_pdf] = useState(null)
 const [response, setResponse] = useState(null)
 const pdfInputRef: any = useRef(null);
-const [pdfData, setPDFData] = useState(null)
     const handleChange = (e) => {
         const { name, value } = e.target
         const message1 = { ...message, [name]: value }
@@ -188,21 +183,6 @@ const getPdfData = (file) => {
                     <Markdown>{response}</Markdown>
                      </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

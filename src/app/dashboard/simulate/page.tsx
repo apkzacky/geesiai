@@ -1,6 +1,6 @@
 'use client'
 import { useRouter } from "next/navigation";
-import {FaEye, FaFilePdf } from "react-icons/fa";
+import { FaFilePdf } from "react-icons/fa";
 import { useState, useRef } from "react";
 import pdfToText from 'react-pdftotext'
 
@@ -8,17 +8,10 @@ import pdfToText from 'react-pdftotext'
 import axios from "axios";
 import AuthComponent from "../../auth/page";
 import { UserAuth } from "../../context/AuthContext";
-import Link from "next/link";
 
 const Simulation = () => {
   // about gemini
 const {tokenLoading, user}:any = UserAuth()
-const [scanning, setScanning] = useState(false)
-
-
-
-
-
 
   // from file upload
   const {push} = useRouter()
@@ -47,7 +40,7 @@ const [activeQuestion, setActiveQuestion] = useState(0)
 
 const [showExam, setShowExam] = useState(false)
 
-const [showExam2, setShowExam2] = useState(null)
+const [ExamObject, setExamObject] = useState(null)
 
 
 
@@ -93,7 +86,7 @@ console.log('No questions: '+noquestion)
       setResponse_Simulation("[Connection - Error], Please check your internet connection and try again.")
     }else{
     
-     setShowExam2(result)
+     setExamObject(result)
       setShowExamPage(true)
 
     }
@@ -110,7 +103,7 @@ console.log('No questions: '+noquestion)
 }
 
 const showExamF = () => {
-   let results = JSON.parse(showExam2)
+   let results = JSON.parse(ExamObject)
   return results.map((item) => (
        <div className="my-5 leading-tight text-black ">
                      <p className="text-2xl ">{item.id}. {item.question}</p>
@@ -361,7 +354,7 @@ const getPdfData = (file) => {
               <div className="items-center justify-between flex flex-wrap mx-3" style={{flexDirection:'row'}}>
                 <div className="items-center justify-center flex mb-3" style={{flexDirection:'row'}}>
                   <h3 className="font-bold">NUMBER OF QUESTIONS</h3>
-                  <input type="number" max={10} min={1} defaultValue={1} name="noquestion"
+                  <input type="number" max={20} min={1} defaultValue={1} name="noquestion"
                   onChange={(e) => handleChange(e,0)}
                   className="mx-5 input input-bordered text-center" />
                 </div>

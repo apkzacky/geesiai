@@ -36,6 +36,7 @@ const handleMessage = async (lesson, examType, noquestion) => {
     try {
         chatLoading = true
         if (examType === "True/False") {
+            // if exam type is true|false
             let sample = '[{"id":"1", "question":"what is biology", "A":"True", "B":"False", "Answer":"True"}]'
             const result = await chat.sendMessageStream(`generate ${noquestion} ${examType} exam questions, using this content ${lesson} and return the all the response only like this format not anything else, here's the format: ${sample}.`)
             const response = `${(await result.response).text()}`
@@ -45,6 +46,7 @@ const handleMessage = async (lesson, examType, noquestion) => {
 
 
         } else {
+            // if exam type is choose
             let sample = '[{"id":"1", "question":"what is biology", "A":"somathing1", "B":"something2","C":"somathing3", "D":"something4", "Answer":"B"}]'
             const result = await chat.sendMessageStream(`generate ${noquestion} ${examType} exam questions, using this content ${lesson} and return the all the response only like this format not anything else, here's the format: ${sample}.`)
             const response = `${(await result.response).text()}`
@@ -69,17 +71,11 @@ export const POST = async (request) => {
         let { lesson, examType, noquestion } = body
         const result = await handleMessage(lesson, examType, noquestion)
         if (result === "Error") {
-
-
             return new NextResponse(JSON.stringify({ 'result': result }), { status: 200 })
-
         } else {
             // const response = JSON.parse(result);
-
-
             return new NextResponse(JSON.stringify({ result: result }), { status: 200 })
         }
-
 
     } catch (error) {
 

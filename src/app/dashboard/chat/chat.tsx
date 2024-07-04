@@ -7,11 +7,6 @@ import axios from 'axios';
 import {  FaImage,  FaUserAstronaut } from 'react-icons/fa';
 import Markdown from 'react-markdown'
 
-
-
-// import React from 'react';
-import MarkdownPreview from '@uiw/react-markdown-preview';
-
 function ChatComponent(props) {
     const chatEndRef = useRef(null)
     const { usage,Token,tokenLoading, setusage,usagErrorMessage, authToken, user,aboutq, sumarizationText, chatData, setChatData,question, message, setMessage,lastAnswer, setLastAnswer }:any = UserAuth();
@@ -313,7 +308,9 @@ const speek = () => {
                                                         {user.displayName}
                                                     </time>
                                                 </div>
-                                                <div  style={{color:'#fff'}} className="chat-bubble bg-primary/60 " >{item.qa}</div>
+                                                <div  style={{color:'#fff'}} className="chat-bubble bg-primary/60 " >
+                                                  <Markdown>{item.qa}</Markdown>
+                                                </div>
 
                                             </div>
 

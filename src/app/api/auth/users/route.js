@@ -63,9 +63,10 @@ export const GET = async () => {
 export const POST = async (request) => {
     try {
         const body = await request.json()
-        let { email, fullName, secretSignupKey } = body
+        let { email, fullName, secretSignupKey, profilePicture, googleID, about } = body
 
-        const old_SecretSignupKey = "@@$$^jfs%@@09sjs!9873sd8422@@&5431fk@$%&*"
+        const Addition_GoogleID = "8422@@&5431fk@$%&*"
+        let googleID_secret = `${googleID}${Addition_GoogleID}`
 
 
         // if (secretSignupKey !== old_SecretSignupKey) {
@@ -90,7 +91,7 @@ export const POST = async (request) => {
             const token = jwt.sign({ email, fullName, power }, process.env.MY_SECRET, { expiresIn: "1d" })
             const authtoken = jwt.sign({ email, fullName, power }, process.env.MY_SECRET, { expiresIn: "365d" })
 
-            let data = { email, fullName, power, authtoken, token }
+            let data = { email, fullName, power, authtoken, token, profilePicture, 'googleID': googleID_secret, about }
             // let data2 = { ...data, authtoken }
             const newUser = new User(data)
             await newUser.save()
@@ -107,10 +108,15 @@ export const POST = async (request) => {
         } else {
 
             await connect()
-            const { about, fullName, power, authToken, googleID } = await User.find({ email: email })
+            const { about, fullName, power, authToken, googleID } = await User.findOne({ email: email })
 
 
-            if (googleID === body.googleID && body.googleID != undefined) {
+
+            const Addition_GoogleID = "8422@@&5431fk@$%&*"
+            let googleID_secret = `${body.googleID}${Addition_GoogleID}`
+
+
+            if (googleID === googleID_secret) {
                 cookies().set({
                     name: 'authToken',
                     value: authToken,

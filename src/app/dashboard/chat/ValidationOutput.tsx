@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { FaCheck, FaDownload, FaEye } from "react-icons/fa";
 import { UserAuth } from "../../context/AuthContext";
 import axios from "axios";
 // import { useTheme } from "next-themes";
@@ -10,10 +9,6 @@ const ValidationOutput = (props) => {
     const { usage, user, setaboutq, aboutq, setSumarizationText,setChatData, chatData, lastAnswer}:any = UserAuth();
 
   const theme:any  = "dark"
-  const [scanning, setScanning] = useState(props.scan)
-const [model, setModel] = useState(true)
-const [previewDataset, setPreviewDataset] = useState(false)
-const [Data, setData] = useState(null)
 const [active, setActive] = useState(aboutq == '' ? '':aboutq)
 const [message, setMessage] = useState(null)
 const [loading, setLoading] = useState(false)
@@ -95,7 +90,7 @@ const [summarizeActiveAnswer, setsummarizeActiveAnswer] = useState(false)
        Summarize Answer
       </h3>
 
-  <textarea
+                    <textarea
                          name='message'
                         onChange={handleChange} 
 
