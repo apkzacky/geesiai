@@ -3,7 +3,6 @@ import { auth } from '../../../auth'
 import { redirect } from 'next/navigation'
 import Image from 'next/image'
 import FinishAuth from '../../component/FinishAuth'
-import uuid from 'uuid'
 const page = async () => {
   const session = await auth()
   if (!session?.user) redirect("/")
@@ -20,9 +19,6 @@ const page = async () => {
   return (
     <div className='items-center justify-center flex flex-col pt-20'>
       
-                      {/* <Image alt=''
-                        src={session?.user?.image}
-                        width={100} height={100} className='rounded-5' /> */}
 
     <h3>Hi! {session?.user?.name}</h3>
     <p>Please finish the loging.</p>

@@ -13,10 +13,8 @@ const page = () => {
 
     const EndPoint = 'http://localhost:3000/api/users/'
 
-    const { user, authToken, tokenLoading, setUser } = UserAuth();
+    const { user, tokenLoading } = UserAuth();
     const [loading, setLoading] = useState(true);
-    const [ResonseMessage, setResonseMessage] = useState(null)
-    const [userDeleted, setUserDeleted] = useState(false)
     useEffect(() => {
         const checkAuthentication = async () => {
             await new Promise((resolve) => setTimeout(resolve, 50));

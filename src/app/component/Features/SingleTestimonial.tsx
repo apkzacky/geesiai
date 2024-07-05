@@ -13,7 +13,7 @@ const SingleTestimonial = ({ testimonial }) => {
 
   const {push} = useRouter()
   return (
-    <div className="w-full max-w-2xl md:p-5">
+    <div className="w-full max-w-2xl md:p-5 mx-5">
       <div className={`${id == 1 ? ' ':''} rounded-box   p-8 shadow-two duration-300 hover:shadow-one dark:bg-dark dark:shadow-three dark:hover:shadow-gray-dark lg:px-5 xl:px-8 text-white border-2 border-white bg-gradient-to-r from-black via-[#333] to-black inline-block text-transparent`}>
         <div className="mb-5 flex items-center space-x-1">
             <h1 className=" border-b border-body-color border-opacity-10 pb-8  leading-relaxed text-body-color dark:border-white dark:border-opacity-10 dark:text-white text-2xl font-bold">

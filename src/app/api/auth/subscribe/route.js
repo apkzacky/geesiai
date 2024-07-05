@@ -1,11 +1,6 @@
 const { NextResponse } = require("next/server")
 import connect from '../../../lib/db'
-import News_Subscribers from '../../../lib/model/news_subscribers'
-import jwt from 'jsonwebtoken'
-
-const ObjectId = require('mongoose').Types.ObjectId
-
-
+import News_Subscribers from '../../../lib/model/news_subscribers.js'
 
 
 export const POST = async (request) => {

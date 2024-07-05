@@ -8,7 +8,7 @@ import { cookies } from "next/headers";
 import favicon from '../../public/icon.ico'
 export const metadata = {
   title: "Geesi AI",
-  description: "Geesi AI | 10X student.",
+  description: "Geesi AI | Study smart not hard",
 };
 
 export default function RootLayout({ children }) {

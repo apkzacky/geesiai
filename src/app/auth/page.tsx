@@ -2,22 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { UserAuth } from '../context/AuthContext';
-import Link from 'next/link';
-import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
-import Image from 'next/image';
+import { FaGoogle } from 'react-icons/fa';
 import {doSocialLogin} from '../actions'
 
-/*
-
-  <Link href="/auth/signup">
-    <button className='btn btn-primary  bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent  py-0 px-11 text-white' style={{borderRadius:50,marginTop:'5%'}} onClick={handleSignIn}>Sign up with email</button>
-    </Link>
-
-   <Link href="/auth/signin">
-      <button className='btn btn-primary  bg-white hover:bg-slate-200 hover:text-black py-0 px-11 text-black' style={{borderRadius:50,marginTop:'5%'}} onClick={handleSignIn}>Login</button>
-   </Link>
-
-*/
 
 function AuthComponent() {
     let theme:any = "dark"
@@ -26,7 +13,7 @@ function AuthComponent() {
     const [passwords, setPasswords] = useState(null)
     const [resonseMessage, setResonseMessage]:any = useState(null)
     
-    const { userId,handleSignIn, user }:any = UserAuth()
+    const {  user }:any = UserAuth()
     // let user = true
     const [status,setStatus]= useState(null)
     const [loading, setLoading] = useState(true);
@@ -97,15 +84,15 @@ const handleChange = (e) => {
 
 
   
-<form action={doSocialLogin} className='items-center justify-center flex-col flex'>
-      <button
-      type='submit'
-      className='btn bg-white hover:bg-white/90  text-secondary py-2 px-10 border-2 border-bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400  items-center justify-between flex' style={{borderRadius:50,marginTop:'5%',flexDirection:'row'}} name='action' value="google"><FaGoogle size={20}/>Sign In With Google</button>
- 
+                                            <form action={doSocialLogin} className='items-center justify-center flex-col flex'>
+                                                <button
+                                                type='submit'
+                                                className='btn bg-white hover:bg-white/90  text-secondary py-2 px-10 border-2 border-bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400  items-center justify-between flex' style={{borderRadius:50,marginTop:'5%',flexDirection:'row'}} name='action' value="google"><FaGoogle size={20}/>Sign In With Google</button>
+                                            
 
- 
- 
-</form>
+                                            
+                                            
+                                            </form>
 
                 </div>
             )}
