@@ -33,7 +33,7 @@ function page() {
         
            
              <Image
-                            src="/icon-black.png"
+                            src="/icon.ico"
                             alt="Vercel Logo"
                             // className="dark:invert"
                             width={170}

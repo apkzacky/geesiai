@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Introducing Geesi AI.
+Unlock the secrete to efficient learning with our innovative AI.
+Our app is designed to help you study smarter, not harder.
 
-## Getting Started
 
-First, run the development server:
+![image info](./public/thumnail.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Geesi AI:-  [geesiai.vercel.app](https://geesiai.vercel.app/).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Geesi AI ?
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Discover a revolutionary way to learn with our Geesi AI, Designed to make studying easier and more interactive, our app offers personalized assistance across various subjects. Whether you're tacking tough math problem, exploring history, or enhancing language skills, our app is here to guide you. Get instant explanations, detailed answers, all while enjoying a seamless, user-frienly experience. Elevate your education with cutting-edge AI technology at your fingertips! this service programmed by Zacky (apkzacky).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
+* Advanced AI Chatting
 
-## Learn More
+“Whether you're tacking tough math problem, exploring history, or enhancing language skills, our app is here to guide you. Get instant explanations, detailed answers, all while enjoying a seamless, user-frienly experience.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Exam Simulation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+“Don't warry about your next examination, with Geesi AI you can 'A+', just by upload your examination modules then exam your self as many as you want,
 
-## Deploy on Vercel
+* Lesson Summarization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+“Say goodbye to endless hours of scramming and hello world Geesi AI the strategic studying, Lesson Summarization is the best choice to learn a subject fast.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# Generate Exam using your pdf
+
+
+Unlock the secrete to efficient learning with our innovative AI. Our app is designed to help you study smarter, not harder, by providing targeted and personalized assistance. Say goodbye to endless hours of scramming and hello to strategic studying. Don't warry about your next examination, with Geesi AI you can 'A+', just by upload your examination modules then exam your self as many as you want. With our AI, you can maximize your productivity, retain more information, and achieve your academic goals with less effort. Transform your study habits today and see the difference.
+
+![image info](./public/Capture2.png)
+
+
+
+
+# Lesson Summarization
+
+
+“Say goodbye to endless hours of scramming and hello world Geesi AI the strategic studying, Lesson Summarization is the best choice to learn a subject fast.
+
+![image info](./public/summarization_demo.png)
+
+
+
+
+# Advanced AI Chatting
+
+
+“Whether you're tacking tough math problem, exploring history, or enhancing language skills, our app is here to guide you. Get instant explanations, detailed answers, all while enjoying a seamless, user-frienly experience.
+
+![image info](./public/chattingdemo.png)
+
+
+
+
+# Powered by Google AI (Gemini)
+I built this project to win the competition held by Google. which we want to develop the future.
+
+I hope to win this competition, I don't think I can compete with the developers of the world, but I will try.
+
+

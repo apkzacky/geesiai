@@ -5,7 +5,6 @@ import User from '../../../lib/model/user'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
-
 const ObjectId = require('mongoose').Types.ObjectId
 
 
