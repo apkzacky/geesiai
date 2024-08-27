@@ -7,9 +7,6 @@ import jwt from 'jsonwebtoken'
 
 const ObjectId = require('mongoose').Types.ObjectId
 
-
-
-
 const getId = async (token) => {
 
     try {
@@ -30,7 +27,7 @@ export const GET = async () => {
     try {
         await connect()
         const users = await User.find()
-        return new NextResponse(JSON.stringify({ response: "UN-AUTHORIZED ACCESS" }), { status: 200 })
+        return new NextResponse(JSON.stringify({ response: users }), { status: 200 })
     } catch (error) {
         return new NextResponse("Error in fetching users" + error, { status: 500 })
     }
@@ -62,29 +59,15 @@ export const GET = async () => {
 export const POST = async (request) => {
     try {
         const body = await request.json()
-        let { email, fullName, secretSignupKey, profilePicture, googleID, about } = body
+        let { email, fullName, profilePicture, googleID, about } = body
 
-        const Addition_GoogleID = "8422@@&5431fk@$%&*"
+        const Addition_GoogleID = process.env.ADDITION_GOOGLEID
         let googleID_secret = `${googleID}${Addition_GoogleID}`
 
-
-        // if (secretSignupKey !== old_SecretSignupKey) {
-        //     return new NextResponse(JSON.stringify({ response: "Access Denied" }), { status: 300 })
-
-        // }
-
-
         await connect()
-
         const user = await User.findOne({ email: email })
         if (!user) {
             await connect()
-
-
-            // hashing the password
-            // const salt = bcrypt.genSaltSync(10);
-            // let password = bcrypt.hashSync(body.password, salt)
-
 
             let power = 25
             const token = jwt.sign({ email, fullName, power }, process.env.MY_SECRET, { expiresIn: "1d" })
@@ -107,7 +90,7 @@ export const POST = async (request) => {
         } else {
 
             await connect()
-            const { about, fullName, power, authToken, googleID } = await User.findOne({ email: email })
+            const { about, fullName, power, authtoken, googleID } = await User.findOne({ email: email })
 
 
 
@@ -118,11 +101,11 @@ export const POST = async (request) => {
             if (googleID === googleID_secret) {
                 cookies().set({
                     name: 'authToken',
-                    value: authToken,
+                    value: authtoken,
                     httpOnly: true,
                     path: '/',
                 })
-                return new NextResponse(JSON.stringify({ response: `Welcome back`, 'authToken': { email, about, fullName, power, authToken, googleID } }, { status: 201 }))
+                return new NextResponse(JSON.stringify({ response: `Welcome back`, 'authToken': { email, about, fullName, power, authtoken, googleID } }, { status: 201 }))
             } else {
                 return new NextResponse(JSON.stringify({ response: 'UN-AUTHORIZED ACCESS' }, { status: 300 }))
             }
